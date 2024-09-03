@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clicker App</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #1c1c1e;
+    }
+
+    #click-button {
+      width: 300px;
+      height: 300px;
+      margin-top: 16px;
+      background-image: url('coin.png');
+      background-size: cover;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+    }
+
+    #score {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    #footer {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="score">0 $ivn</div>
+    <button id="click-button"></button>
+  </div>
+  <div id="footer">Листинг завтра</div>
+
+  <script>
+    let score = 0;
+    const scoreDisplay = document.getElementById('score');
+    const clickButton = document.getElementById('click-button');
+
+    // Load saved score from localStorage
+    const savedScore = localStorage.getItem('clickerScore');
+    if (savedScore !== null) {
+      score = parseInt(savedScore);
+      scoreDisplay.textContent = `${score} $ivn`;
+    }
+
+    clickButton.addEventListener('click', () => {
+      score++;
+      scoreDisplay.textContent = `${score} $ivn`;
+      localStorage.setItem('clickerScore', score);
+    });
+  </script>
+</body>
+</html>
