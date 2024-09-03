@@ -61,7 +61,7 @@
     }
 
     clickButton.addEventListener('click', () => {
-      score+=100;
+      score+=0.0001;
       scoreDisplay.textContent = `${score} $ivn`;
       localStorage.setItem('clickerScore', score);
     });
