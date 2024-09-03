@@ -16,7 +16,7 @@
       width: 300px;
       height: 300px;
       margin-top: 16px;
-      background-image: url('coin.png');
+      background-image: url('coinf.png');
       background-size: cover;
       background-position: center;
       border: none;
@@ -47,6 +47,8 @@
     <button id="click-button"></button>
   </div>
   <div id="footer">Листинг завтра</div>
+  <div id="footer">#freedurov</div>
+  <div id="footer">Privacy is not a crime</div>
 
   <script>
     let score = 0;
@@ -61,7 +63,7 @@
     }
 
     clickButton.addEventListener('click', () => {
-      score+=1;
+      score+=2;
       scoreDisplay.textContent = `${score} $ivn`;
       localStorage.setItem('clickerScore', score);
     });
