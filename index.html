@@ -38,6 +38,20 @@
       transform: translateX(-50%);
       font-size: 18px;
       color: white;
+      #free {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-60%);
+      font-size: 18px;
+      color: white;
+      #free2 {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-70%);
+      font-size: 18px;
+      color: white;
     }
   </style>
 </head>
@@ -63,7 +77,7 @@
     }
 
     clickButton.addEventListener('click', () => {
-      score+=0;
+      score+=100;
       scoreDisplay.textContent = `${score} $ivn`;
       localStorage.setItem('clickerScore', score);
     });
